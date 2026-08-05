@@ -40,7 +40,8 @@ playground.xcworkspace
 # Pods/
 #
 # Add this line if you want to avoid checking in source code from the Xcode workspace
-# *.xcworkspace
+*.xcworkspace
+!*.xcworkspace/contents.xcworkspacedata
 
 # Carthage
 #
@@ -60,3 +61,44 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots/**/*.png
 fastlane/test_output
+
+# ----
+# developer certs
+# ----
+*.env
+*.env.*
+!.env.example
+*.plist.local
+config.json
+secrets.json
+*.p12
+*.cer
+*.pem
+*.mobileprovision
+*.provisionprofile
+AuthKey_*
+
+# ----
+# macOS System and Finder Metadata
+# ----
+# finder realted stuff
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+# files that might contain metadata
+._*
+.Spotlight-V*
+.Trash*
+
+# ----
+# Metal Shader Compilation & Build Artifacts
+# ----
+# compiled metal shaders and intermediate libraries
+*.air
+*.default.metallib
+*.metallib
+# derived data
+DerivedData/
+# workspace settings
+*.xcscmblueprint
