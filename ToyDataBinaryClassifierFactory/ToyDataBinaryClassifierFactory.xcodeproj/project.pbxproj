@@ -23,9 +23,22 @@
 		E9798D9B3023F3CA009E5E4C /* ToyDataBinaryClassifierFactoryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToyDataBinaryClassifierFactoryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		E9798DA73023F91E009E5E4C /* Exceptions for "ToyDataBinaryClassifierFactory" folder in "ToyDataBinaryClassifierFactoryTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Distributions.swift,
+			);
+			target = E9798D9A3023F3CA009E5E4C /* ToyDataBinaryClassifierFactoryTests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		E914EBCF3023E3AA006662BF /* ToyDataBinaryClassifierFactory */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				E9798DA73023F91E009E5E4C /* Exceptions for "ToyDataBinaryClassifierFactory" folder in "ToyDataBinaryClassifierFactoryTests" target */,
+			);
 			path = ToyDataBinaryClassifierFactory;
 			sourceTree = "<group>";
 		};
