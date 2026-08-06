@@ -20,18 +20,44 @@
 
 /* Begin PBXFileReference section */
 		E914EBCD3023E3AA006662BF /* ToyDataBinaryClassifierFactory */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ToyDataBinaryClassifierFactory; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9798D9B3023F3CA009E5E4C /* ToyDataBinaryClassifierFactoryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToyDataBinaryClassifierFactoryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		E9798DA73023F91E009E5E4C /* Exceptions for "ToyDataBinaryClassifierFactory" folder in "ToyDataBinaryClassifierFactoryTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Distributions.swift,
+			);
+			target = E9798D9A3023F3CA009E5E4C /* ToyDataBinaryClassifierFactoryTests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		E914EBCF3023E3AA006662BF /* ToyDataBinaryClassifierFactory */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				E9798DA73023F91E009E5E4C /* Exceptions for "ToyDataBinaryClassifierFactory" folder in "ToyDataBinaryClassifierFactoryTests" target */,
+			);
 			path = ToyDataBinaryClassifierFactory;
+			sourceTree = "<group>";
+		};
+		E9798D9C3023F3CA009E5E4C /* ToyDataBinaryClassifierFactoryTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = ToyDataBinaryClassifierFactoryTests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		E914EBCA3023E3AA006662BF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E9798D983023F3CA009E5E4C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -45,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				E914EBCF3023E3AA006662BF /* ToyDataBinaryClassifierFactory */,
+				E9798D9C3023F3CA009E5E4C /* ToyDataBinaryClassifierFactoryTests */,
 				E914EBCE3023E3AA006662BF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -53,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				E914EBCD3023E3AA006662BF /* ToyDataBinaryClassifierFactory */,
+				E9798D9B3023F3CA009E5E4C /* ToyDataBinaryClassifierFactoryTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -82,6 +110,28 @@
 			productReference = E914EBCD3023E3AA006662BF /* ToyDataBinaryClassifierFactory */;
 			productType = "com.apple.product-type.tool";
 		};
+		E9798D9A3023F3CA009E5E4C /* ToyDataBinaryClassifierFactoryTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E9798D9F3023F3CA009E5E4C /* Build configuration list for PBXNativeTarget "ToyDataBinaryClassifierFactoryTests" */;
+			buildPhases = (
+				E9798D973023F3CA009E5E4C /* Sources */,
+				E9798D983023F3CA009E5E4C /* Frameworks */,
+				E9798D993023F3CA009E5E4C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				E9798D9C3023F3CA009E5E4C /* ToyDataBinaryClassifierFactoryTests */,
+			);
+			name = ToyDataBinaryClassifierFactoryTests;
+			packageProductDependencies = (
+			);
+			productName = ToyDataBinaryClassifierFactoryTests;
+			productReference = E9798D9B3023F3CA009E5E4C /* ToyDataBinaryClassifierFactoryTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -93,6 +143,9 @@
 				LastUpgradeCheck = 2660;
 				TargetAttributes = {
 					E914EBCC3023E3AA006662BF = {
+						CreatedOnToolsVersion = 26.6;
+					};
+					E9798D9A3023F3CA009E5E4C = {
 						CreatedOnToolsVersion = 26.6;
 					};
 				};
@@ -112,12 +165,30 @@
 			projectRoot = "";
 			targets = (
 				E914EBCC3023E3AA006662BF /* ToyDataBinaryClassifierFactory */,
+				E9798D9A3023F3CA009E5E4C /* ToyDataBinaryClassifierFactoryTests */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		E9798D993023F3CA009E5E4C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E914EBC93023E3AA006662BF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E9798D973023F3CA009E5E4C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -267,6 +338,40 @@
 			};
 			name = Release;
 		};
+		E9798DA03023F3CA009E5E4C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.scholar-of-artifice.ToyDataBinaryClassifierFactoryTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		E9798DA13023F3CA009E5E4C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.scholar-of-artifice.ToyDataBinaryClassifierFactoryTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -284,6 +389,15 @@
 			buildConfigurations = (
 				E914EBD53023E3AA006662BF /* Debug */,
 				E914EBD63023E3AA006662BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E9798D9F3023F3CA009E5E4C /* Build configuration list for PBXNativeTarget "ToyDataBinaryClassifierFactoryTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E9798DA03023F3CA009E5E4C /* Debug */,
+				E9798DA13023F3CA009E5E4C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
