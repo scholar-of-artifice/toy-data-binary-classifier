@@ -102,3 +102,27 @@ Icon
 DerivedData/
 # workspace settings
 *.xcscmblueprint
+
+# ----
+# Testing and Code Coverage
+# ----
+*.xcresult
+*.profraw
+*.profdata
+
+# ----
+# Temporary Editor Files
+# ----
+*~
+*.swp
+*.swo
+
+# ----
+# Build Directories
+# ----
+build/
+
+# ----
+# Swift Package Manager
+# ----
+.swiftpm/xcode/xcuserdata/
