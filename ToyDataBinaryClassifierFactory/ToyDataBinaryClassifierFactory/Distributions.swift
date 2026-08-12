@@ -8,6 +8,18 @@
 import Foundation
 import GameplayKit
 
+extension GKRandomSource {
+    /*
+     Generates a uniform random float within a specified ClosedRange safely.
+     */
+    func nextFloat(in range: ClosedRange<Float>) -> Float {
+        // make a value between 0.0 and 1.0
+        let u = self.nextUniform()
+        // linear interpolation
+        return (range.lowerBound * (1.0 - u)) + (range.upperBound * u)
+    }
+}
+
 /*
  makeUniformDistribution
  Generates an array of floating-point values from a uniform distribution.
@@ -15,12 +27,17 @@ import GameplayKit
 func makeUniformDistribution(
     in range: ClosedRange<Float>,  // the range of values
     count: Int,  // the size of the new array
-    using generator: inout RandomNumberGenerator  // the generator to pull from
+    using src: GKMersenneTwisterRandomSource  // the random source
 ) -> [Float] {
+    // edge case
     guard count > 0 else { return [] }
-    return (0..<count).map { _ in
-        Float.random(in: range, using: &generator)
+    // initialize empty array
+    var values = [Float]()
+    values.reserveCapacity(count)
+    while values.count < count {
+        values.append(src.nextFloat(in: range))
     }
+    return values
 }
 
 /*
@@ -32,7 +49,7 @@ func makeNormalDistribution(
     mu : Float,  // the mean
     sigma: Float,// the deviation
     count: Int,  // the size of the new array
-    using src: inout GKARC4RandomSource // preseeded random source
+    using src: GKMersenneTwisterRandomSource // preseeded random source
 ) -> [Float] {
     // edge case
     guard count > 0 else { return [] }
