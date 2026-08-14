@@ -9,3 +9,6 @@ import Foundation
 
 print("Hello, World!")
 
+let n_sample = createData(distribtion_type: "normal")
+let u_sample = createData(distribtion_type: "uniform")
+
