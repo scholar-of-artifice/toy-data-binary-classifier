@@ -71,7 +71,57 @@ func makeSamples(config: SampleConfig) throws {
             "Generated [\(i)/\(config.populationCount)] -> \(fileURL.lastPathComponent)"
         )
     }
-    // log the data
-    NSLog("%@", new_data)
-    return new_data
+}
+
+/// Make a random value for mu
+func makeRandMu(
+    using src: GKMersenneTwisterRandomSource  // the random source
+) -> Float {
+    let mu_range = makeRandMinMaxPair(using: src)
+    // create a floating point value
+    let mu = makeUniformDistribution(
+        in: mu_range[0]...mu_range[1],
+        count: 1,
+        using: src
+    )
+    return mu[0]
+}
+
+/// Make a random value for sigma
+func makeRandSigma(
+    using src: GKMersenneTwisterRandomSource  // the random source
+) -> Float {
+    // create a floating point value
+    let sigma = makeUniformDistribution(
+        in: 0.0...1.0,
+        count: 1,
+        using: src
+    )
+    return sigma[0]
+}
+
+/// Make a random min-max pairing for a uniform distribution
+func makeRandMinMaxPair(
+    using src: GKMersenneTwisterRandomSource  // the random source
+) -> [Float] {
+    // create 2 floating point values
+    let gain = makeUniformDistribution(
+        in: -1.0...1.0,
+        count: 2,
+        using: src
+    )
+    let values = makeUniformDistribution(
+        in: 0.0...Float.greatestFiniteMagnitude,
+        count: 2,
+        using: src
+    )
+    let a = gain[0] * values[0]
+    let b = gain[1] * values[1]
+    //
+    return [a, b].sorted()
+}
+
+/// Make a random UInt64
+func makeRandSeed() -> UInt64 {
+    return UInt64.random(in: .min ... .max)
 }
