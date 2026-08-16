@@ -8,7 +8,7 @@
 import Foundation
 import GameplayKit
 
-internal extension Comparable {
+extension Comparable {
     /*
      Clamps a value to the provided ClosedRange
      */
@@ -58,10 +58,10 @@ func makeUniformDistribution(
  Uses Box-Muller Transform.
  */
 func makeNormalDistribution(
-    mu : Float,  // the mean
-    sigma: Float,// the deviation
+    mu: Float,  // the mean
+    sigma: Float,  // the deviation
     count: Int,  // the size of the new array
-    using src: GKMersenneTwisterRandomSource // preseeded random source
+    using src: GKMersenneTwisterRandomSource  // preseeded random source
 ) -> [Float] {
     // edge case
     guard count > 0 else { return [] }
