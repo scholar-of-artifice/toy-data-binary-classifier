@@ -11,7 +11,7 @@ import Foundation
 enum DistributionError: LocalizedError {
     case invalidSaveLocation(String)
     case invalidPopulationSize(UInt32)
-    case invalidSampleSize(UInt32)
+    case invalidSampleSize(Int)
     case invalidRange(min: Float, max: Float)
     case invalidStandardDeviation(Float)
 
@@ -64,7 +64,7 @@ enum DistributionSpecification {
 struct SampleConfig {
     let saveLocation: URL  // where should the data be saved?
     let populationCount: UInt32  // how many data samples should we contribute to our dataset for this run?
-    let sampleSize: UInt32  // how big should a list of numbers be?
+    let sampleSize: Int  // how big should a list of numbers be?
     let seed: UInt64  // what should we seed the RNG with for reproducibility?
     let isSorted: Bool  // is this data sorted?
     let distribution: DistributionSpecification  // what distribution do we want and what parameters does it have?
@@ -72,7 +72,7 @@ struct SampleConfig {
     init(
         saveLocation: URL,
         populationCount: UInt32,
-        sampleSize: UInt32,
+        sampleSize: Int,
         seed: UInt64,
         isSorted: Bool,
         distribution: DistributionSpecification

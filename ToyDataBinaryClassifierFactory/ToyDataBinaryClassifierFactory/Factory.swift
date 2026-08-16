@@ -39,14 +39,14 @@ func makeSamples(config: SampleConfig) throws {
         case .uniform(let min, let max):
             sample = makeUniformDistribution(
                 in: min...max,
-                count: Int(config.sampleSize),
+                count: config.sampleSize,
                 using: randomSource
             )
         case .normal(let mu, let sigma):
             sample = makeNormalDistribution(
                 mu: mu,
                 sigma: sigma,
-                count: Int(config.sampleSize),
+                count: config.sampleSize,
                 using: randomSource
             )
         }
