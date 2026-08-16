@@ -7,31 +7,68 @@
 
 import GameplayKit
 
-/// Creates a sample of data using the requested parameters
-func createData(
-    distribtion_type: String  // TODO: make the interface
-) -> [Float] {
-    let seed_data: UInt64 = 123_456_789 // TODO: do not hard code
-    let s = GKMersenneTwisterRandomSource(seed: seed_data)
-    
-    // make some data
-    var new_data = [Float]() // initialize container for holding data
-    // use a function based on distribution_type
-    if distribtion_type == "uniform" {
-        let r: ClosedRange<Float> = -1.0...1.0
-        // make the data
-        new_data = makeUniformDistribution(
-            in: r,
-            count: 30,
-            using: s
-        )
-    } else {
-        // make the data
-        new_data = makeNormalDistribution(
-            mu: 0.0,
-            sigma: 1.0,
-            count: 30,
-            using: s
+///
+func makeSamples(config: SampleConfig) throws {
+    let fileManager = FileManager.default
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "HH-mm-ss-SSS"
+
+    //
+    try fileManager.createDirectory(
+        at: config.saveLocation,
+        withIntermediateDirectories: true,
+        attributes: nil
+    )
+
+    print("Output directory ready at: \(config.saveLocation.path)")
+
+    // initialize RNG
+    let randomSource = GKMersenneTwisterRandomSource(seed: config.seed)
+
+    print("Making Dataset")
+    print("\t\(config.populationCount) Samples")
+    print("\t\(config.sampleSize) Values per Sample")
+    print("\t\(config.isSorted ? "Sorted" : "Unsorted")")
+    print("\t\(config.distribution)")
+
+    for i in 0...config.populationCount {
+        print("Creating Sample #\(i) of \(config.populationCount)...")
+
+        var sample: [Float] = []
+        switch config.distribution {
+        case .uniform(let min, let max):
+            sample = makeUniformDistribution(
+                in: min...max,
+                count: Int(config.sampleSize),
+                using: randomSource
+            )
+        case .normal(let mu, let sigma):
+            sample = makeNormalDistribution(
+                mu: mu,
+                sigma: sigma,
+                count: Int(config.sampleSize),
+                using: randomSource
+            )
+        }
+
+        if config.isSorted {
+            print("Sorting Data...")
+            sample.sort()
+        }
+
+        print("New Sample: %@", sample)
+
+        let timestamp = dateFormatter.string(from: Date())
+
+        // example output
+        let outputFileName = "sample_\(timestamp).txt"
+        let fileURL = config.saveLocation.appendingPathComponent(outputFileName)
+        let content = sample.map {
+            String($0)
+        }.joined(separator: ", ")
+        try content.write(to: fileURL, atomically: true, encoding: .utf8)
+        print(
+            "Generated [\(i)/\(config.populationCount)] -> \(fileURL.lastPathComponent)"
         )
     }
     // log the data
