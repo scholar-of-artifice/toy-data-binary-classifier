@@ -27,7 +27,7 @@
 		E9798DA73023F91E009E5E4C /* Exceptions for "ToyDataBinaryClassifierFactory" folder in "ToyDataBinaryClassifierFactoryTests" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Distributions.swift,
+				Generators/Distributions.swift,
 			);
 			target = E9798D9A3023F3CA009E5E4C /* ToyDataBinaryClassifierFactoryTests */;
 		};
