@@ -41,46 +41,46 @@ struct SampleConfigTests {
             )
         }
     }
-    
+
     @Test("Throws On Zero Population Test")
     func throwsOnZeroPopulation() {
         #expect(throws: DistributionError.invalidPopulationSize(0)) {
             try SampleConfig(
-               saveLocation: validURL,
-               populationCount: 0,
-               sampleSize: 50,
-               seed: 12345,
-               isSorted: false,
-               distribution: try getValidDistribution()
-           )
+                saveLocation: validURL,
+                populationCount: 0,
+                sampleSize: 50,
+                seed: 12345,
+                isSorted: false,
+                distribution: try getValidDistribution()
+            )
         }
     }
-    
+
     @Test("Throws On Zero Sample Size Test")
     func throwsOnZeroSampleSize() {
         #expect(throws: DistributionError.invalidSampleSize(0)) {
             try SampleConfig(
-               saveLocation: validURL,
-               populationCount: 1000,
-               sampleSize: 0,
-               seed: 12345,
-               isSorted: false,
-               distribution: try getValidDistribution()
-           )
+                saveLocation: validURL,
+                populationCount: 1000,
+                sampleSize: 0,
+                seed: 12345,
+                isSorted: false,
+                distribution: try getValidDistribution()
+            )
         }
     }
-    
+
     @Test("Throws On Negative Sample Size Test")
     func throwsOnNegativeSampleSize() {
         #expect(throws: DistributionError.invalidSampleSize(-10)) {
             try SampleConfig(
-               saveLocation: validURL,
-               populationCount: 1000,
-               sampleSize: -10,
-               seed: 12345,
-               isSorted: false,
-               distribution: try getValidDistribution()
-           )
+                saveLocation: validURL,
+                populationCount: 1000,
+                sampleSize: -10,
+                seed: 12345,
+                isSorted: false,
+                distribution: try getValidDistribution()
+            )
         }
     }
 }
