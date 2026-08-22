@@ -55,9 +55,9 @@ struct DistributionsTests {
                     count: expected_size,
                     using: generator
                 )
-                #expect(result.allSatisfy{ 0.0 <= $0 && $0 <= 1.0 })
+                #expect(result.allSatisfy { 0.0 <= $0 && $0 <= 1.0 })
             }
-            
+
             @Test("Produces a values within a bipolar unit range")
             func valuesWithinBoundsForBipolarUnitRange() async throws {
                 let seed = UInt64(32)
@@ -69,23 +69,32 @@ struct DistributionsTests {
                     count: expected_size,
                     using: generator
                 )
-                #expect(result.allSatisfy{ -1.0 <= $0 && $0 <= 1.0 })
+                #expect(result.allSatisfy { -1.0 <= $0 && $0 <= 1.0 })
             }
 
-            @Test("Extreme positive skew poduces a values within the specified bounds")
+            @Test(
+                "Extreme positive skew poduces a values within the specified bounds"
+            )
             func valuesWithinBoundsAtGreatestFloat() async throws {
                 let seed = UInt64(32)
                 let generator = GKMersenneTwisterRandomSource(seed: seed)
                 let expected_size = 10000
-                let test_range: ClosedRange<Float> = Float.greatestFiniteMagnitude.nextDown...Float.greatestFiniteMagnitude
+                let test_range: ClosedRange<Float> =
+                    Float.greatestFiniteMagnitude
+                    .nextDown...Float.greatestFiniteMagnitude
                 let result = makeUniformDistribution(
                     in: test_range,
                     count: expected_size,
                     using: generator
                 )
-                
-                #expect(result.allSatisfy{ Float.greatestFiniteMagnitude.nextDown <= $0 && $0 <= Float.greatestFiniteMagnitude })
-                
+
+                #expect(
+                    result.allSatisfy {
+                        Float.greatestFiniteMagnitude.nextDown <= $0
+                            && $0 <= Float.greatestFiniteMagnitude
+                    }
+                )
+
             }
         }
 
@@ -149,7 +158,8 @@ struct DistributionsTests {
                 using: generator
             )
             let expected_result: [Float] = [
-                5.0881767, 5.4566193, -1.8898633, 3.1530886, 1.1397997, 2.5052123, 1.5382901, 4.17603, 5.5699725, 4.2105317
+                5.0881767, 5.4566193, -1.8898633, 3.1530886, 1.1397997,
+                2.5052123, 1.5382901, 4.17603, 5.5699725, 4.2105317,
             ]
             #expect(result == expected_result)
         }
@@ -171,11 +181,10 @@ struct DistributionsTests {
             )
             #expect(result.count == expected_size)
         }
-        
 
         @Suite("Bounds Tests")
         struct BoundsTests {
-            
+
             @Test("Is finite and within floating bounds")
             func isWithinBounds() async throws {
                 let seed = UInt64(42)
@@ -187,10 +196,10 @@ struct DistributionsTests {
                     count: expected_size,
                     using: generator
                 )
-                #expect(result.allSatisfy{ $0.isFinite })
-                
+                #expect(result.allSatisfy { $0.isFinite })
+
             }
-            
+
             @Test("Does not overflow")
             func doesNotOverflow() async throws {
                 let seed = UInt64(42)
@@ -202,11 +211,14 @@ struct DistributionsTests {
                     count: expected_size,
                     using: generator
                 )
-                
-                #expect(result.allSatisfy{ abs($0) <= Float.greatestFiniteMagnitude })
+
+                #expect(
+                    result.allSatisfy {
+                        abs($0) <= Float.greatestFiniteMagnitude
+                    }
+                )
             }
-            
-            
+
             @Test("Sample Mean and StdDev matche parameters")
             func statisticsMatch() async throws {
                 let seed = UInt64(42)
@@ -219,11 +231,11 @@ struct DistributionsTests {
                     using: generator
                 )
                 let mean = result.reduce(0, +) / Float(expected_size)
-                #expect( abs(mean - 2.0) < 0.1 )
+                #expect(abs(mean - 2.0) < 0.1)
             }
-            
+
         }
-        
+
         @Test("Identical seeded generators produce identical distributions")
         func identicalResults() async throws {
             let seed = UInt64(42)
