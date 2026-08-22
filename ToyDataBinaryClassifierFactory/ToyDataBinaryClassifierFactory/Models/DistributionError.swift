@@ -8,7 +8,7 @@
 import Foundation
 
 /// DistributionError
-enum DistributionError: LocalizedError {
+enum DistributionError: LocalizedError, Equatable {
     case invalidSaveLocation(String)
     case invalidPopulationSize(UInt32)
     case invalidSampleSize(Int)
