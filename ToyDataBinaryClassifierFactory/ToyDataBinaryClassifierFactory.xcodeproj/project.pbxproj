@@ -32,6 +32,7 @@
 				Generators/UniformGenerator.swift,
 				Models/DistributionError.swift,
 				Models/DistributionSpecification.swift,
+				Models/SampleConfig.swift,
 			);
 			target = E9798D9A3023F3CA009E5E4C /* ToyDataBinaryClassifierFactoryTests */;
 		};
