@@ -14,7 +14,6 @@ struct NormalGenerator: DistributionGenerating {
     let source: GKRandomSource
     
     func generate(count: Int) -> [Float] {
-        guard count > 0 else { return [] }
         // edge case
         guard count > 0 else { return [] }
         // initialize empty array
