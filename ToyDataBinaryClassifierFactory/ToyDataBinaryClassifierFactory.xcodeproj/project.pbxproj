@@ -29,6 +29,7 @@
 			membershipExceptions = (
 				Generators/NormalGenerator.swift,
 				Generators/RandomSourceExtensions.swift,
+				Generators/UniformGenerator.swift,
 			);
 			target = E9798D9A3023F3CA009E5E4C /* ToyDataBinaryClassifierFactoryTests */;
 		};
