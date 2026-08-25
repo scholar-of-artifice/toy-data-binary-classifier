@@ -30,6 +30,7 @@
 				Generators/NormalGenerator.swift,
 				Generators/RandomSourceExtensions.swift,
 				Generators/UniformGenerator.swift,
+				IO/DiskExporter.swift,
 				Models/DatasetManifest.swift,
 				Models/DistributionConfig.swift,
 				Models/DistributionError.swift,
