@@ -1,9 +1,44 @@
 # toy-data-binary-classifier
-Simple program to create basic dataset for binary classification. Written in Swift.
+Program to create basic dataset for binary classification. Written in Swift.
 
-## What can you make?
-This program allows you to create a basic dataset for binary classification.
-You provide some parameters and it will create a dataset where each sample is a list of numbers from a distribution of your choice.
+## Problem
+Architecting local AI models or calibrating MLX architectures and development pipelines on Apple Silicon, relies on cumbersom data-science stacks across multiple technologies.
+Researchers require a precise, lightweight method to forge controlled materials for early-stage testing, benchmarking, etc without being tethered to slow high-level dependencies.
+
+## Solution
+This project is a specilized instrument written natively in Swift. It serves as a rapid, dependency-free forge to create basic datasets for binary classification.
+This bypasses bloated environments and deterministically generates synthetic numerical data directly on macOS.
+Feel free to use this tool for rapid prototyping in your early stage ML pipelines.
+
+## Who is this for?
+This tool is crafted for those working at the intersection of local ML and Apple hardware:
+
+### MLX Creators
+Engineers seeking lightweight, native data generation to pipe directly into Apple MLX models.
+
+### AI Researchers
+Scientists requiring strictly deterministic datasets to benchmark model convergence and recreate anomalies.
+
+### Private Compute Advocates
+Developers constructing isolated, on-device pipelines who prefer tools with zero external dependencies.
+
+## Core Mechanisms
+The program grants you precise control over the synthesized data through a defined set of parameters. Let's go over a few:
+
+### Distribution Geometry
+Utilize `distribution_specs` to define the shape of the data. Currently supports Uniform and Gaussian distributions with configurable arguments.
+
+### Absolute Determinism
+A `seed` parameter ensures identical dataset recreation across every run.
+
+### Volume Control
+Manipualte `population_count` (total examples in dataset) and `sample_size` (list length) to instantly scale the dimensions of your synthetic materials.
+
+### Sequence Ordering
+Toggle the `is_sorted` boolean to automatically order the generated numerical sequence.
+
+### IO Routing
+Designate a `save_location` string to write to disk.
 
 ### Parameters
 
@@ -27,64 +62,12 @@ A `DistributionParameters` instance that packages the correct `distribution_type
 
 ### Using the program
 
-In main, we can do something like this:
+The following example illustrates how to create a dataset:
+- of `100` examples
+- where each list is `30` *sorted* values
+- where each value is from a *uniform distrubtion*
+- and all values fall between `-10.5` and `3.2`
+
 ```swift
 
-/* Create a uniform random distribution */
-
-/* These are the arguments to provide the generator. */
-let argsA = UniformArgs(
-    min: -1.3,
-    max: 5.85
- )
-
-/* Package the distribution parameters */
-let dSetA = DistributionParameters(
-    distributionType: .uniform,
-    params: argsA
-)
-
-/*
-Produces 10 examples of data.
-Each example is a sorted list of 30 numbers from a uniform random distribution where values d[i] fall between -1.3 <= d[i] <= 5.85
-*/
-makeSamples(
-    save_location: "./Data/",
-    population_count: 10,
-    sample_size: 30,
-    seed: 42,
-    is_sorted: true,
-    distribution_specs: dSetA
-)
-
-
-/* Create a Gaussian random distribution */
-
-/* These are the arguments to provide the generator. */
-let argsB = GaussianArgs(
-    sigma: 5.0,
-    mu: 1.0
- )
-
-/* Package the distribution parameters */
-let dSetB = DistributionParameters(
-    distributionType: .gaussian,
-    params: argsB
-)
-
-/*
-Produces 10 examples of data.
-Each example is a sorted list of 30 numbers from a Gaussian random distribution where values have a known variance and mean.
-*/
-makeSamples(
-    save_location: "./Data/",
-    population_count: 10,
-    sample_size: 30,
-    seed: 42,
-    is_sorted: true,
-    distribution_specs: dSetB
-)
-
 ```
-
-`
