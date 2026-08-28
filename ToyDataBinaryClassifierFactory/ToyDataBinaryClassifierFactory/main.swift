@@ -8,56 +8,37 @@
 import Foundation
 import GameplayKit
 
-print("Hello, World!")
-/*
+print("Hello, from ToyDataBinaryClassifierFactory!")
+
+let currentDirectory = URL(
+    fileURLWithPath: FileManager.default.currentDirectoryPath
+)
+let outputDirectory = currentDirectory.appending(path: "Output")
+
 do {
-    // choose a location
-    let curretDir = URL(
-        fileURLWithPath: FileManager.default.currentDirectoryPath
+    let distribution = try DistributionSpecification.makeNormal(
+        mu: 0.0,
+        sigma: 0.5
     )
-    let outputFolder = curretDir.appendingPathComponent(
-        "my_data/uniform",
-        isDirectory: true
+    let config = try SampleConfig(
+        saveLocation: outputDirectory,
+        populationCount: 10,
+        sampleSize: 5,
+        seed: 1234,
+        isSorted: true,
+        distribution: distribution
     )
-
-    /*// initialize a RNG
-     let randomSource = GKMersenneTwisterRandomSource(seed: 129)
-     // create a random value for
-     let rand_range = makeRandMinMaxPair(using: randomSource)
-     let rand_mu = makeRandMu(using: randomSource)
-     let rand_sigma = makeRandSigma(using: randomSource)
-
-     // build and validate distribution spec
-     let distribution_uniform = try DistributionSpecification.makeUniform(
-         min: rand_range[0],
-         max: rand_range[1]
-     )
-     let distribution_normal = try DistributionSpecification.makeNormal(
-         mu: rand_mu,
-         sigma: rand_sigma
-     )
-
-     // create validated configurations
-     let uniform_config = try SampleConfig(
-         saveLocation: outputFolder,
-         populationCount: 3,
-         sampleSize: 30,
-         seed: 123,
-         isSorted: true,
-         distribution: distribution_uniform
-     )
-     let normal_config = try SampleConfig(
-         saveLocation: outputFolder,
-         populationCount: 3,
-         sampleSize: 30,
-         seed: 123,
-         isSorted: true,
-         distribution: distribution_normal
-     )
-     // make some data
-     try makeSamples(config: uniform_config)
-     try makeSamples(config: normal_config)*/
+    let exporter = try DiskExporter(outDirectory: outputDirectory)
+    let pipeline = DiskExportPipeline(
+        exporter: exporter,
+        config: config,
+        label: 1
+    )
+    print("starting data generation")
+    try pipeline.run()
+    print("data generation complete")
+} catch let error as DistributionError {
+    print("something is wrong")
 } catch {
-    print("Exectution Failed: \(error.localizedDescription)")
+    print("something else is wrong")
 }
- */
