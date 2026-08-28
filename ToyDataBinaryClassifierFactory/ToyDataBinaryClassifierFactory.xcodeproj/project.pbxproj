@@ -37,6 +37,7 @@
 				Models/DistributionSpecification.swift,
 				Models/SampleConfig.swift,
 				Models/SampleRecord.swift,
+				Pipelines/DiskExportPipeline.swift,
 				Protocols/DataPipeline.swift,
 				Protocols/DistributionGenerating.swift,
 			);
