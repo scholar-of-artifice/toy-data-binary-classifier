@@ -14,6 +14,14 @@ struct ContentView: View {
                 title: "Core Configuration",
                 content: CoreConfiguration()
             )
+            RecessedContainer(
+                title: "Distribution Configuration",
+                content: DistributionConfiguration()
+            )
+            RecessedContainer(
+                title: "Execution Status",
+                content: ExecutionStatus()
+            )
         }
         .padding()
     }
