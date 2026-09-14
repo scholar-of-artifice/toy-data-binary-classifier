@@ -10,10 +10,18 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            RecessedContainer(
+                title: "Core Configuration",
+                content: CoreConfiguration()
+            )
+            RecessedContainer(
+                title: "Distribution Configuration",
+                content: DistributionConfiguration()
+            )
+            RecessedContainer(
+                title: "Execution Status",
+                content: ExecutionStatus()
+            )
         }
         .padding()
     }
