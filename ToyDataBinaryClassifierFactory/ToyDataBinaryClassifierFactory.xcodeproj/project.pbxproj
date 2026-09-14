@@ -63,6 +63,25 @@
 			);
 			target = E9798D9A3023F3CA009E5E4C /* ToyDataBinaryClassifierFactoryTests */;
 		};
+		E9DA2B9030588AEA009994D2 /* Exceptions for "ToyDataBinaryClassifierFactory" folder in "ToyDataBinaryClassifierFactoryApp" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Generators/NormalGenerator.swift,
+				Generators/RandomSourceExtensions.swift,
+				Generators/UniformGenerator.swift,
+				IO/DiskExporter.swift,
+				Models/DatasetManifest.swift,
+				Models/DistributionConfig.swift,
+				Models/DistributionError.swift,
+				Models/DistributionSpecification.swift,
+				Models/SampleConfig.swift,
+				Models/SampleRecord.swift,
+				Pipelines/DiskExportPipeline.swift,
+				Protocols/DataPipeline.swift,
+				Protocols/DistributionGenerating.swift,
+			);
+			target = E9DA2B673058895E009994D2 /* ToyDataBinaryClassifierFactoryApp */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -70,6 +89,7 @@
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				E982955B303B7A670077D008 /* Exceptions for "ToyDataBinaryClassifierFactory" folder in "ToyDataBinaryClassifierFactoryTests" target */,
+				E9DA2B9030588AEA009994D2 /* Exceptions for "ToyDataBinaryClassifierFactory" folder in "ToyDataBinaryClassifierFactoryApp" target */,
 			);
 			path = ToyDataBinaryClassifierFactory;
 			sourceTree = "<group>";
