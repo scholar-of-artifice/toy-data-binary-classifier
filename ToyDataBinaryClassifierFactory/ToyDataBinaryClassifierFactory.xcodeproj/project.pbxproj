@@ -47,6 +47,7 @@
 		E982955B303B7A670077D008 /* Exceptions for "ToyDataBinaryClassifierFactory" folder in "ToyDataBinaryClassifierFactoryTests" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				"Extensions/JSONEncoder+Deterministic.swift",
 				Generators/NormalGenerator.swift,
 				Generators/RandomSourceExtensions.swift,
 				Generators/UniformGenerator.swift,
@@ -66,6 +67,7 @@
 		E9DA2B9030588AEA009994D2 /* Exceptions for "ToyDataBinaryClassifierFactory" folder in "ToyDataBinaryClassifierFactoryApp" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				"Extensions/JSONEncoder+Deterministic.swift",
 				Generators/NormalGenerator.swift,
 				Generators/RandomSourceExtensions.swift,
 				Generators/UniformGenerator.swift,
