@@ -50,6 +50,7 @@
 				"Extensions/JSONEncoder+Deterministic.swift",
 				Generators/NormalGenerator.swift,
 				Generators/ParameterGradients/LinearGradient.swift,
+				Generators/ParameterGradients/SineGradient.swift,
 				Generators/RandomSourceExtensions.swift,
 				Generators/UniformGenerator.swift,
 				IO/DiskExporter.swift,
