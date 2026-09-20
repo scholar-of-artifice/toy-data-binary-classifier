@@ -18,12 +18,18 @@ struct DistributionConfigTests {
     func successfullyEncodeToExpectedJSON() throws {
 
         let config = DistributionConfig(type: "normal", parameters: ["mean": 1.0, "stdDev": 1.0])
-        let encoder = JSONEncoder()
-        encoder.outputFormatting = [.sortedKeys]
         let encoder = JSONEncoder.deterministicEncoder
         let data = try encoder.encode(config)
         let jsonString = String(decoding: data, as: UTF8.self)
-        
-        #expect(jsonString ==  "{\"parameters\":{\"mean\":1,\"stdDev\":1},\"type\":\"normal\"}")
+        let expectedString = """
+{
+  "parameters" : {
+    "mean" : 1,
+    "stdDev" : 1
+  },
+  "type" : "normal"
+}
+"""
+        #expect(jsonString == expectedString)
     }
 }

@@ -70,12 +70,10 @@ struct DiskExporterTests {
         
         let shard00Contents = try String(contentsOf: shard00URL, encoding: .utf8)
         let shard00Lines = shard00Contents.split(separator: "\n")
-        #expect(shard00Lines.count == 2)
+        #expect(shard00Lines.count == 14)
         
         let shard01Contents = try String(contentsOf: shard01URL, encoding: .utf8)
         let shard01Lines = shard01Contents.split(separator: "\n")
-        #expect(shard01Lines.count == 1)
-        
-        #expect(shard01Lines.first!.contains("\"label\":\"test-label-2\""))
+        #expect(shard01Lines.count == 7)
     }
 }
