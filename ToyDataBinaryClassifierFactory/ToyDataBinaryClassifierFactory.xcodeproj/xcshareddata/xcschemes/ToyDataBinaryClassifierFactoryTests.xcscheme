@@ -38,6 +38,15 @@
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES"
       queueDebuggingEnableBacktraceRecording = "Yes">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "E914EBCC3023E3AA006662BF"
+            BuildableName = "ToyDataBinaryClassifierFactory"
+            ReferencedContainer = "container:ToyDataBinaryClassifierFactory.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -45,6 +54,14 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "E914EBCC3023E3AA006662BF"
+            BuildableName = "ToyDataBinaryClassifierFactory"
+            ReferencedContainer = "container:ToyDataBinaryClassifierFactory.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
