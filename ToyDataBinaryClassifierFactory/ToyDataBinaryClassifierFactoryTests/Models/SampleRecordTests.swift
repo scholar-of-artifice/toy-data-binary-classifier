@@ -18,6 +18,7 @@ struct SampleRecordTests {
     func encodeSuccessfullyToExpectedJSON() throws {
         let record = SampleRecord(label: "label_A", features: [0.45, -2.0])
         let encoder = JSONEncoder()
+        let encoder = JSONEncoder.deterministicEncoder
         
         let data = try encoder.encode(record)
         let jsonString = String(decoding: data, as: UTF8.self)
