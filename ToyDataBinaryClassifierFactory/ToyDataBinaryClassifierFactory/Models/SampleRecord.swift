@@ -8,6 +8,6 @@
 import Foundation
 
 struct SampleRecord: Encodable {
-    let label: Int
+    let label: String
     let features: [Double]
 }
