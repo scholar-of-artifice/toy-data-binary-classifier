@@ -49,6 +49,7 @@
 			membershipExceptions = (
 				"Extensions/JSONEncoder+Deterministic.swift",
 				Generators/NormalGenerator.swift,
+				Generators/ParameterGradients/LinearGradient.swift,
 				Generators/RandomSourceExtensions.swift,
 				Generators/UniformGenerator.swift,
 				IO/DiskExporter.swift,
