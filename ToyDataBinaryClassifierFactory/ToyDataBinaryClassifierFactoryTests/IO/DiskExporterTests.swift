@@ -53,9 +53,9 @@ struct DiskExporterTests {
         let tempDir = getUniqueTemporaryDirectory()
         let exporter = try DiskExporter(outDirectory: tempDir, samplesPerShard: 2)
         
-        let sample00 = SampleRecord(label: 0, features: [1.0, 2.0])
-        let sample01 = SampleRecord(label: 1, features: [2.0, 2.2])
-        let sample02 = SampleRecord(label: 2, features: [3.0, 2.3])
+        let sample00 = SampleRecord(label: "test-label-0", features: [1.0, 2.0])
+        let sample01 = SampleRecord(label: "test-label-1", features: [2.0, 2.2])
+        let sample02 = SampleRecord(label: "test-label-2", features: [3.0, 2.3])
         
         try exporter.writeSample(sample00)
         try exporter.writeSample(sample01)
@@ -76,6 +76,6 @@ struct DiskExporterTests {
         let shard01Lines = shard01Contents.split(separator: "\n")
         #expect(shard01Lines.count == 1)
         
-        #expect(shard01Lines.first!.contains("\"label\":2"))
+        #expect(shard01Lines.first!.contains("\"label\":\"test-label-2\""))
     }
 }

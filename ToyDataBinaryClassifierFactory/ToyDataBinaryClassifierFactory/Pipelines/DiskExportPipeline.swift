@@ -50,7 +50,7 @@ class DiskExportPipeline: DataPipeline {
                 rawFeatures.sort()
             }
             let features = rawFeatures.map { Double($0) }
-            let record = SampleRecord(label: i, features: features)
+            let record = SampleRecord(label: String(i), features: features)
             try exporter.writeSample(record)
             // periodic yield ?
         }
