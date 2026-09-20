@@ -14,6 +14,34 @@ import Testing
 @Suite("LinearGradient Tests")
 struct LinearGradientTests {
 
+    @Test("Size 0")
+    func correctGradientSizeZero() {
+
+        let b: ClosedRange<Float> = -1.0...1.0
+        let l = 0
+
+        let gradient = generateLinearGradient(bounds: b, length: l)
+        let expectedGradient: [Float] = []
+
+        #expect(gradient.count == 0)
+        #expect(gradient == expectedGradient)
+    }
+
+    @Test("ConstantBounds")
+    func correctGradientForConstantBounds() {
+
+        let b: ClosedRange<Float> = 1.0...1.0
+        let l = 10
+
+        let gradient = generateLinearGradient(bounds: b, length: l)
+        let expectedGradient: [Float] = [
+            1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0,
+        ]
+
+        #expect(gradient.count == 10)
+        #expect(gradient == expectedGradient)
+    }
+
     @Test("A linear gradient between -1.0 and 1.0 of even length")
     func correctGradientFromNegativeOneToOneEvenLength() {
 
