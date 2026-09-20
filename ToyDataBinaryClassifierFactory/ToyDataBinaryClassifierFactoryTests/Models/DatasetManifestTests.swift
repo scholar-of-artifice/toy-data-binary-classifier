@@ -34,7 +34,7 @@ struct DatasetManifestTests {
             
         )
         
-        let encoder = JSONEncoder()
+        let encoder = JSONEncoder.deterministicEncoder
         let decoder = JSONDecoder()
         
         let encodedData = try encoder.encode(originalManifest)

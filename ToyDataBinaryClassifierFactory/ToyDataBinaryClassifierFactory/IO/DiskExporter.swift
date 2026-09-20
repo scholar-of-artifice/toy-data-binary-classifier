@@ -14,7 +14,7 @@ class DiskExporter {
     private var currentShardIndex = 0
     private var currentSamplesInShard = 0
     private var currentFileHandle: FileHandle?
-    private var encoder = JSONEncoder()
+    private var encoder = JSONEncoder.deterministicEncoder
     
     init(outDirectory: URL, samplesPerShard: Int = 100_000) throws {
         self.outDirectory = outDirectory
@@ -26,11 +26,9 @@ class DiskExporter {
     
     /// Writes the top-level manifest file
     func writeManifest(_ manifest: DatasetManifest) throws {
-        encoder.outputFormatting = [.prettyPrinted]
         let data = try encoder.encode(manifest)
         let fileURL = outDirectory.appendingPathComponent("manifest.json")
         try data.write(to: fileURL)
-        encoder.outputFormatting = [] // reset to compact for .jsonl
     }
     
     /// Appends a single generated sample to the current shard
