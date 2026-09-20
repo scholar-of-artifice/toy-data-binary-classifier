@@ -13,6 +13,7 @@ import Foundation
 ///     - length: the number of elements in the resulting array
 ///     - frequency: the number of full sinusoidal periods across the entire array
 ///     - phase: initial phase offset in radians
+///     - decay: a damping factor. higher values means faster decay. 0.0 is constant source.
 func generateSineGradient(
     bounds: ClosedRange<Float>,
     length: Int,
