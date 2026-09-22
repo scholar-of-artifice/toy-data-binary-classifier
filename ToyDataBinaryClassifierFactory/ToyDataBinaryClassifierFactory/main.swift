@@ -20,6 +20,7 @@ do {
         mu: 0.0,
         sigma: 0.5
     )
+
     let config = try SampleConfig(
         saveLocation: outputDirectory,
         populationCount: 10,
@@ -28,11 +29,14 @@ do {
         isSorted: true,
         distribution: distribution
     )
+
+    let labelObj = LabelData(distribution: config.distribution)
+
     let exporter = try DiskExporter(outDirectory: outputDirectory)
     let pipeline = DiskExportPipeline(
         exporter: exporter,
         config: config,
-        label: 1
+        label: labelObj
     )
     print("starting data generation")
     try pipeline.run()
