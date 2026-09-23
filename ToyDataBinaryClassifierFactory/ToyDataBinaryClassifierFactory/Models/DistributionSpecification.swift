@@ -23,7 +23,6 @@ enum DistributionSpecification: Encodable {
         case sigma
     }
     func encode(to encoder: Encoder) throws {
-        var container = encoder.container(keyedBy: DynamicCodingKey.self)
 
         switch self {
         case .uniform(let min, let max):
@@ -54,21 +53,5 @@ enum DistributionSpecification: Encodable {
             throw DistributionError.invalidStandardDeviation(sigma)
         }
         return .normal(mu: mu, sigma: sigma)
-    }
-}
-
-private struct DynamicCodingKey: CodingKey {
-
-    var stringValue: String
-    var intValue: Int?
-
-    init?(stringValue: String) {
-        self.stringValue = stringValue
-        self.intValue = nil
-    }
-    
-    init?(intValue: Int) {
-        self.stringValue = "\(intValue)"
-        self.intValue = intValue
     }
 }
