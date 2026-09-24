@@ -11,9 +11,9 @@ import GameplayKit
 class DiskExportPipeline: DataPipeline {
     private let exporter: DiskExporter
     private let config: SampleConfig
-    private let label: Int
+    private let label: LabelData
 
-    init(exporter: DiskExporter, config: SampleConfig, label: Int) {
+    init(exporter: DiskExporter, config: SampleConfig, label: LabelData) {
         self.exporter = exporter
         self.config = config
         self.label = label
@@ -50,7 +50,7 @@ class DiskExportPipeline: DataPipeline {
                 rawFeatures.sort()
             }
             let features = rawFeatures.map { Double($0) }
-            let record = SampleRecord(label: String(i), features: features)
+            let record = SampleRecord(label: label, features: features)
             try exporter.writeSample(record)
             // periodic yield ?
         }

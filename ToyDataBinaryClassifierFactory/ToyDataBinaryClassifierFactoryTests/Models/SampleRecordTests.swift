@@ -16,7 +16,12 @@ struct SampleRecordTests {
     
     @Test("Encode Successfully To Expected JSON Test")
     func encodeSuccessfullyToExpectedJSON() throws {
-        let record = SampleRecord(label: "label_A", features: [0.45, -2.0])
+        let dist = try DistributionSpecification.makeUniform(
+            min: -10.0,
+            max: 1.0
+        )
+        let label = LabelData(distribution: dist)
+        let record = SampleRecord(label: label, features: [0.45, -2.0])
         let encoder = JSONEncoder.deterministicEncoder
         
         let data = try encoder.encode(record)
@@ -27,7 +32,13 @@ struct SampleRecordTests {
     0.45,
     -2
   ],
-  "label" : "label_A"
+  "label" : {
+    "classification" : "uniform",
+    "parameters" : {
+      "maximum" : 1,
+      "minimum" : -10
+    }
+  }
 }
 """
         

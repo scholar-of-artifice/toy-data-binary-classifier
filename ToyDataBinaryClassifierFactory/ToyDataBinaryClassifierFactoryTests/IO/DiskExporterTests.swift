@@ -52,10 +52,25 @@ struct DiskExporterTests {
     func shardsFilesCorrectly() throws {
         let tempDir = getUniqueTemporaryDirectory()
         let exporter = try DiskExporter(outDirectory: tempDir, samplesPerShard: 2)
+        let dist00 = try DistributionSpecification.makeUniform(
+            min: -10.0,
+            max: 1.0
+        )
+        let dist01 = try DistributionSpecification.makeNormal(
+            mu: 2.0,
+            sigma: 1.0
+        )
+        let dist02 = try DistributionSpecification.makeUniform(
+            min: 1.0,
+            max: 4.0
+        )
+        let label00 = LabelData(distribution: dist00)
+        let label01 = LabelData(distribution: dist01)
+        let label02 = LabelData(distribution: dist02)
         
-        let sample00 = SampleRecord(label: "test-label-0", features: [1.0, 2.0])
-        let sample01 = SampleRecord(label: "test-label-1", features: [2.0, 2.2])
-        let sample02 = SampleRecord(label: "test-label-2", features: [3.0, 2.3])
+        let sample00 = SampleRecord(label: label00, features: [1.0, 2.0])
+        let sample01 = SampleRecord(label: label01, features: [2.0, 2.2])
+        let sample02 = SampleRecord(label: label02, features: [3.0, 2.3])
         
         try exporter.writeSample(sample00)
         try exporter.writeSample(sample01)
@@ -70,10 +85,10 @@ struct DiskExporterTests {
         
         let shard00Contents = try String(contentsOf: shard00URL, encoding: .utf8)
         let shard00Lines = shard00Contents.split(separator: "\n")
-        #expect(shard00Lines.count == 14)
+        #expect(shard00Lines.count == 26)
         
         let shard01Contents = try String(contentsOf: shard01URL, encoding: .utf8)
         let shard01Lines = shard01Contents.split(separator: "\n")
-        #expect(shard01Lines.count == 7)
+        #expect(shard01Lines.count == 13)
     }
 }
