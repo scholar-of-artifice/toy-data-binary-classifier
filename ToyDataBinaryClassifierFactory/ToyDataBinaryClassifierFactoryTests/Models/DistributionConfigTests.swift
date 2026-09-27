@@ -5,7 +5,6 @@
 //  Created by scholar-of-artifice on 24/08/2026.
 //
 
-
 import Foundation
 import Testing
 
@@ -22,14 +21,14 @@ struct DistributionConfigTests {
         let data = try encoder.encode(config)
         let jsonString = String(decoding: data, as: UTF8.self)
         let expectedString = """
-{
-  "parameters" : {
-    "mean" : 1,
-    "stdDev" : 1
-  },
-  "type" : "normal"
-}
-"""
+            {
+              "parameters" : {
+                "mean" : 1,
+                "stdDev" : 1
+              },
+              "type" : "normal"
+            }
+            """
         #expect(jsonString == expectedString)
     }
 }

@@ -30,16 +30,16 @@ extension GKRandomSource {
         // linear interpolation
         return Float(interpolated).clamped(to: range)
     }
-    
+
     func randomMu() -> Float {
         let muRange = self.randomMinMaxPair()
         return self.nextFloat(in: muRange)
     }
-    
+
     func randomSigma() -> Float {
         return self.nextFloat(in: 0.0...1.0)
     }
-    
+
     func randomMinMaxPair() -> ClosedRange<Float> {
         // create 2 floating point values
         let gain1 = self.nextFloat(in: -1.0...1.0)

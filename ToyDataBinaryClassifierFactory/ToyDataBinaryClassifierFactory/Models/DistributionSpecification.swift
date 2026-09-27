@@ -25,14 +25,14 @@ enum DistributionSpecification: Encodable {
     func encode(to encoder: Encoder) throws {
 
         switch self {
-        case .uniform(let min, let max):
-            var nested = encoder.container(keyedBy: UniformCodingKeys.self)
-            try nested.encode(min, forKey: .minimum)
-            try nested.encode(max, forKey: .maximum)
-        case .normal(let mu, let sigma):
-            var nested = encoder.container(keyedBy: NormalCodingKeys.self)
-            try nested.encode(mu, forKey: .mu)
-            try nested.encode(sigma, forKey: .sigma)
+            case .uniform(let min, let max):
+                var nested = encoder.container(keyedBy: UniformCodingKeys.self)
+                try nested.encode(min, forKey: .minimum)
+                try nested.encode(max, forKey: .maximum)
+            case .normal(let mu, let sigma):
+                var nested = encoder.container(keyedBy: NormalCodingKeys.self)
+                try nested.encode(mu, forKey: .mu)
+                try nested.encode(sigma, forKey: .sigma)
         }
     }
 

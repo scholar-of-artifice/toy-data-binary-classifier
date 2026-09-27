@@ -64,7 +64,7 @@ struct SineGradientTests {
             #expect(gradient.count == 10)
             #expect(gradient == expectedGradient)
         }
-        
+
         @Test(
             "A sinusoidal gradient between -1.0 and 1.0 of even length with higher frequency"
         )

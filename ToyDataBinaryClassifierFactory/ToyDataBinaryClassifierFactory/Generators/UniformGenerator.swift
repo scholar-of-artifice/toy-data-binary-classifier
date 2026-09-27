@@ -11,7 +11,7 @@ import GameplayKit
 struct UniformGenerator: DistributionGenerating {
     let range: ClosedRange<Float>
     let source: GKRandomSource
-    
+
     func generate(count: Int) -> [Float] {
         // edge case
         guard count > 0 else { return [] }

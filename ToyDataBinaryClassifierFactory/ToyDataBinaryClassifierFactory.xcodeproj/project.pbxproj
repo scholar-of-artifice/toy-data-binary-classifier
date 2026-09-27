@@ -6,6 +6,13 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		E9893A2930692023000802DF /* autoformat-script.bash in Resources */ = {isa = PBXBuildFile; fileRef = E9893A2730692023000802DF /* autoformat-script.bash */; };
+		E9893A2A30692023000802DF /* autoformat-script.bash in Resources */ = {isa = PBXBuildFile; fileRef = E9893A2730692023000802DF /* autoformat-script.bash */; };
+		E9893A2B30692023000802DF /* autoformat-script.bash in Resources */ = {isa = PBXBuildFile; fileRef = E9893A2730692023000802DF /* autoformat-script.bash */; };
+		E9893A2C30692023000802DF /* autoformat-script.bash in Resources */ = {isa = PBXBuildFile; fileRef = E9893A2730692023000802DF /* autoformat-script.bash */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		E9DA2B7530588960009994D2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -38,6 +45,8 @@
 /* Begin PBXFileReference section */
 		E914EBCD3023E3AA006662BF /* ToyDataBinaryClassifierFactory */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ToyDataBinaryClassifierFactory; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9798D9B3023F3CA009E5E4C /* ToyDataBinaryClassifierFactoryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToyDataBinaryClassifierFactoryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9893A2730692023000802DF /* autoformat-script.bash */ = {isa = PBXFileReference; lastKnownFileType = text; path = "autoformat-script.bash"; sourceTree = "<group>"; };
+		E9893A2E30692E59000802DF /* .swift-format */ = {isa = PBXFileReference; lastKnownFileType = text; path = ".swift-format"; sourceTree = "<group>"; };
 		E9DA2B683058895E009994D2 /* ToyDataBinaryClassifierFactoryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToyDataBinaryClassifierFactoryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9DA2B7430588960009994D2 /* ToyDataBinaryClassifierFactoryAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToyDataBinaryClassifierFactoryAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9DA2B7E30588960009994D2 /* ToyDataBinaryClassifierFactoryAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToyDataBinaryClassifierFactoryAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -165,11 +174,13 @@
 		E914EBC43023E3AA006662BF = {
 			isa = PBXGroup;
 			children = (
+				E9893A2E30692E59000802DF /* .swift-format */,
 				E914EBCF3023E3AA006662BF /* ToyDataBinaryClassifierFactory */,
 				E9798D9C3023F3CA009E5E4C /* ToyDataBinaryClassifierFactoryTests */,
 				E9DA2B693058895E009994D2 /* ToyDataBinaryClassifierFactoryApp */,
 				E9DA2B7730588960009994D2 /* ToyDataBinaryClassifierFactoryAppTests */,
 				E9DA2B8130588960009994D2 /* ToyDataBinaryClassifierFactoryAppUITests */,
+				E9893A2830692023000802DF /* CustomBuild */,
 				E914EBCE3023E3AA006662BF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -186,6 +197,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		E9893A2830692023000802DF /* CustomBuild */ = {
+			isa = PBXGroup;
+			children = (
+				E9893A2730692023000802DF /* autoformat-script.bash */,
+			);
+			path = CustomBuild;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -193,6 +212,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E914EBD43023E3AA006662BF /* Build configuration list for PBXNativeTarget "ToyDataBinaryClassifierFactory" */;
 			buildPhases = (
+				E9893A2D30692072000802DF /* ShellScript */,
 				E914EBC93023E3AA006662BF /* Sources */,
 				E914EBCA3023E3AA006662BF /* Frameworks */,
 				E914EBCB3023E3AA006662BF /* CopyFiles */,
@@ -358,6 +378,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9893A2930692023000802DF /* autoformat-script.bash in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,6 +386,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9893A2A30692023000802DF /* autoformat-script.bash in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,6 +394,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9893A2B30692023000802DF /* autoformat-script.bash in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,10 +402,31 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9893A2C30692023000802DF /* autoformat-script.bash in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E9893A2D30692072000802DF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/Users/wfdev/Desktop/github_workspace/public/toy-data-binary-classifier/ToyDataBinaryClassifierFactory/CustomBuild/autoformat-script.bash\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E914EBC93023E3AA006662BF /* Sources */ = {
@@ -558,6 +602,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
@@ -569,6 +614,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;

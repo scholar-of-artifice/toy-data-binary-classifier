@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ExecutionStatus: View {
-    
+
     var body: some View {
         //
         VStack(
@@ -23,7 +23,7 @@ struct ExecutionStatus: View {
                 ) {
                     ProgressView(value: 0.5)
                     Text("Making dataset...")
-                    Button("Cancel", role: .destructive){
+                    Button("Cancel", role: .destructive) {
                     }
                 }
             } else {
