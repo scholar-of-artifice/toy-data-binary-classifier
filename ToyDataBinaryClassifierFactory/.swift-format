@@ -4,15 +4,15 @@
   },
   "indentBlankLines" : false,
   "indentConditionalCompilationBlocks" : true,
-  "indentSwitchCaseLabels" : false,
+  "indentSwitchCaseLabels" : true,
   "indentation" : {
-    "spaces" : 2
+    "spaces" : 4
   },
-  "lineBreakAroundMultilineExpressionChainComponents" : false,
+  "lineBreakAroundMultilineExpressionChainComponents" : true,
   "lineBreakBeforeControlFlowKeywords" : false,
-  "lineBreakBeforeEachArgument" : false,
-  "lineBreakBeforeEachGenericRequirement" : false,
-  "lineBreakBetweenDeclarationAttributes" : false,
+  "lineBreakBeforeEachArgument" : true,
+  "lineBreakBeforeEachGenericRequirement" : true,
+  "lineBreakBetweenDeclarationAttributes" : true,
   "lineLength" : 100,
   "maximumBlankLines" : 1,
   "multiElementCollectionTrailingCommas" : true,
@@ -23,7 +23,7 @@
     ]
   },
   "orderedImports" : {
-    "includeConditionalImports" : false,
+    "includeConditionalImports" : true,
     "shouldGroupImports" : true
   },
   "prioritizeKeepingFunctionOutputTogether" : false,
