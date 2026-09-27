@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct DistributionConfiguration: View {
-    
+
     var body: some View {
-        
+
         // MARK: This section is for parameters to make for the Distribution
         VStack(
             alignment: .leading,
@@ -18,7 +18,7 @@ struct DistributionConfiguration: View {
         ) {
             // What kind of Distribution?
             Text("Distribution Type")
-            
+
             // The parameters for the distribution
             Grid(
                 alignment: .leading,
@@ -37,8 +37,7 @@ struct DistributionConfiguration: View {
                             .font(.system(.body, design: .rounded))
                             .gridColumnAlignment(.trailing)
                     }
-                }
-                else if a == 1 {
+                } else if a == 1 {
                     GridRow {
                         Text("Minimum")
                             .font(.system(.body, design: .rounded))
@@ -49,8 +48,7 @@ struct DistributionConfiguration: View {
                             .font(.system(.body, design: .rounded))
                             .gridColumnAlignment(.trailing)
                     }
-                }
-                else {
+                } else {
                     Text("Please select a distribution")
                 }
             }

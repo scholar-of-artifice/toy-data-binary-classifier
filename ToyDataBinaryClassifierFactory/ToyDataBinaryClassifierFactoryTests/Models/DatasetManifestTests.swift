@@ -31,22 +31,22 @@ struct DatasetManifestTests {
             samplesPerShard: 100,
             totalShards: 10,
             classDistributions: ["class_0": configA, "class_1": configB]
-            
+
         )
-        
+
         let encoder = JSONEncoder.deterministicEncoder
         let decoder = JSONDecoder()
-        
+
         let encodedData = try encoder.encode(originalManifest)
         let decodedManifest = try decoder.decode(DatasetManifest.self, from: encodedData)
-        
+
         #expect(decodedManifest.datasetName == "TestManifest")
         #expect(decodedManifest.totalSamples == 1000)
         #expect(decodedManifest.featuresPerSample == 2)
         #expect(decodedManifest.totalShards == 10)
         #expect(decodedManifest.classDistributions.keys.contains("class_0"))
         #expect(decodedManifest.classDistributions.keys.contains("class_1"))
-        
+
         #expect(decodedManifest.classDistributions["class_0"]?.type == "normal")
         #expect(decodedManifest.classDistributions["class_1"]?.type == "uniform")
     }

@@ -5,18 +5,18 @@
 //  Created by scholar-of-artifice on 14/09/2026.
 //
 
-import SwiftUI
 import Foundation
+import SwiftUI
 
 struct RecessedContainer<Content: View>: View {
     let title: String
     let content: Content
-    
+
     init(title: String, content: Content) {
         self.title = title
         self.content = content
     }
-    
+
     var body: some View {
         VStack(
             alignment: .leading,

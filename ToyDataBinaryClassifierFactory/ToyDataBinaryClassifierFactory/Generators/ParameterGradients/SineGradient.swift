@@ -29,13 +29,14 @@ func generateSineGradient(
     let halfSpan = (bounds.upperBound - bounds.lowerBound) / 2.0
     let denominator = Float(length - 1)
     let twoPi = 2.0 * Float.pi
-    return (0..<length).map { i in
-        // progress x from 0 to 1
-        let x = Float(i) / denominator
-        let envelope = exp(-decay * x)
-        // wave cycle
-        let theta = (twoPi * frequency * x)  + phase
-        
-        return midpoint + sin(theta) * envelope * halfSpan
-    }
+    return (0..<length)
+        .map { i in
+            // progress x from 0 to 1
+            let x = Float(i) / denominator
+            let envelope = exp(-decay * x)
+            // wave cycle
+            let theta = (twoPi * frequency * x) + phase
+
+            return midpoint + sin(theta) * envelope * halfSpan
+        }
 }

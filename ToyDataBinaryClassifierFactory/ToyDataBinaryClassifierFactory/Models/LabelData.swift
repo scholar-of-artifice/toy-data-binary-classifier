@@ -12,13 +12,13 @@ struct LabelData: Encodable {
     init(distribution: DistributionSpecification) {
         self.parameters = distribution
         switch distribution {
-        case .uniform:
-            self.classification = "uniform"
-        case .normal:
-            self.classification = "normal"
+            case .uniform:
+                self.classification = "uniform"
+            case .normal:
+                self.classification = "normal"
         }
     }
-    
+
     // explicit init if you never need custom class names
     init(classification: String, parameters: DistributionSpecification) {
         self.classification = classification

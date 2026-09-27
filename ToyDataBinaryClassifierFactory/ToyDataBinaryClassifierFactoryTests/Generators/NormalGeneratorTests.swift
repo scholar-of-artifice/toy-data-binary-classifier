@@ -147,7 +147,7 @@ struct NormalGeneratorTests {
         ]
         #expect(result == expected_result)
     }
-    
+
     @Test("Does Not Overflow")
     func doesNotOverflow() {
         let mt_src_A = GKMersenneTwisterRandomSource(

@@ -12,7 +12,7 @@ struct NormalGenerator: DistributionGenerating {
     let mu: Float
     let sigma: Float
     let source: GKRandomSource
-    
+
     func generate(count: Int) -> [Float] {
         // edge case
         guard count > 0 else { return [] }
@@ -41,5 +41,3 @@ struct NormalGenerator: DistributionGenerating {
         return values
     }
 }
-
-
