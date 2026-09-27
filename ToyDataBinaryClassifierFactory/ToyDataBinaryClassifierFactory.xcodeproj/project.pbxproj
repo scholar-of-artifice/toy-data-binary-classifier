@@ -178,7 +178,7 @@
 				E9DA2B693058895E009994D2 /* ToyDataBinaryClassifierFactoryApp */,
 				E9DA2B7730588960009994D2 /* ToyDataBinaryClassifierFactoryAppTests */,
 				E9DA2B8130588960009994D2 /* ToyDataBinaryClassifierFactoryAppUITests */,
-				E9893A2830692023000802DF /* Build */,
+				E9893A2830692023000802DF /* CustomBuild */,
 				E914EBCE3023E3AA006662BF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -195,12 +195,12 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E9893A2830692023000802DF /* Build */ = {
+		E9893A2830692023000802DF /* CustomBuild */ = {
 			isa = PBXGroup;
 			children = (
 				E9893A2730692023000802DF /* autoformat-script.bash */,
 			);
-			path = Build;
+			path = CustomBuild;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,6 +210,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E914EBD43023E3AA006662BF /* Build configuration list for PBXNativeTarget "ToyDataBinaryClassifierFactory" */;
 			buildPhases = (
+				E9893A2D30692072000802DF /* ShellScript */,
 				E914EBC93023E3AA006662BF /* Sources */,
 				E914EBCA3023E3AA006662BF /* Frameworks */,
 				E914EBCB3023E3AA006662BF /* CopyFiles */,
@@ -405,6 +406,26 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		E9893A2D30692072000802DF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/Users/wfdev/Desktop/github_workspace/public/toy-data-binary-classifier/ToyDataBinaryClassifierFactory/CustomBuild/autoformat-script.bash\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E914EBC93023E3AA006662BF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -579,6 +600,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
@@ -590,6 +612,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
