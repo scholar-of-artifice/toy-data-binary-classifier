@@ -10,7 +10,10 @@ import Foundation
 /// Represents a distribution and its validated parameters
 enum DistributionSpecification: Encodable {
 
+    /// A continuous uniform distribution bounded between a minimum and maximum value
     case uniform(min: Float, max: Float)
+
+    /// A continuous normal distribution defined by its mean (µ) and standard deviation (σ)
     case normal(mu: Float, sigma: Float)
 
     // keys used inside the nested "parameters" object
@@ -22,6 +25,12 @@ enum DistributionSpecification: Encodable {
         case mu
         case sigma
     }
+
+    /// Encodes the distribution's parameters dictionary into the specified encoder.
+    ///
+    /// - Parameters:
+    ///     - encoder: the encoder to write data to.
+    /// - Throws: An error if encoding any associated numerical values fails.
     func encode(to encoder: Encoder) throws {
 
         switch self {
@@ -36,7 +45,11 @@ enum DistributionSpecification: Encodable {
         }
     }
 
-    /// Factory method for uniform distribution with validation
+    /// Creates and validates a uniform distribution specification.
+    ///
+    /// - Parameters:
+    ///     - min: the lower bound of the range
+    ///     - max: the upper bound of the range
     static func makeUniform(min: Float, max: Float) throws
         -> DistributionSpecification
     {
@@ -45,7 +58,12 @@ enum DistributionSpecification: Encodable {
         }
         return .uniform(min: min, max: max)
     }
-    /// Factory method for normal distribution with validation
+
+    /// Creates and validates a uniform distribution specification.
+    ///
+    /// - Parameters:
+    ///     - mu: the mean of the distribution
+    ///     - sigma: the standard deviation
     static func makeNormal(mu: Float, sigma: Float) throws
         -> DistributionSpecification
     {
