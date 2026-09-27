@@ -46,6 +46,7 @@
 		E914EBCD3023E3AA006662BF /* ToyDataBinaryClassifierFactory */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ToyDataBinaryClassifierFactory; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9798D9B3023F3CA009E5E4C /* ToyDataBinaryClassifierFactoryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToyDataBinaryClassifierFactoryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9893A2730692023000802DF /* autoformat-script.bash */ = {isa = PBXFileReference; lastKnownFileType = text; path = "autoformat-script.bash"; sourceTree = "<group>"; };
+		E9893A2E30692E59000802DF /* .swift-format */ = {isa = PBXFileReference; lastKnownFileType = text; path = ".swift-format"; sourceTree = "<group>"; };
 		E9DA2B683058895E009994D2 /* ToyDataBinaryClassifierFactoryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToyDataBinaryClassifierFactoryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9DA2B7430588960009994D2 /* ToyDataBinaryClassifierFactoryAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToyDataBinaryClassifierFactoryAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9DA2B7E30588960009994D2 /* ToyDataBinaryClassifierFactoryAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToyDataBinaryClassifierFactoryAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -173,6 +174,7 @@
 		E914EBC43023E3AA006662BF = {
 			isa = PBXGroup;
 			children = (
+				E9893A2E30692E59000802DF /* .swift-format */,
 				E914EBCF3023E3AA006662BF /* ToyDataBinaryClassifierFactory */,
 				E9798D9C3023F3CA009E5E4C /* ToyDataBinaryClassifierFactoryTests */,
 				E9DA2B693058895E009994D2 /* ToyDataBinaryClassifierFactoryApp */,
