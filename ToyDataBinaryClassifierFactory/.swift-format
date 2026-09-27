@@ -35,7 +35,7 @@
     "AlwaysUseLowerCamelCase" : true,
     "AmbiguousTrailingClosureOverload" : true,
     "AvoidRetroactiveConformances" : true,
-    "BeginDocumentationCommentWithOneLineSummary" : false,
+    "BeginDocumentationCommentWithOneLineSummary" : true,
     "DoNotUseSemicolons" : true,
     "DontRepeatTypeInStaticProperties" : true,
     "FileScopedDeclarationPrivacy" : true,
@@ -69,7 +69,7 @@
     "UseLetInEveryBoundCaseVariable" : true,
     "UseShorthandTypeNames" : true,
     "UseSingleLinePropertyGetter" : true,
-    "UseSynthesizedInitializer" : true,
+    "UseSynthesizedInitializer" : false,
     "UseTripleSlashForDocumentationComments" : true,
     "UseWhereClausesInForLoops" : false,
     "ValidateDocumentationComments" : true
