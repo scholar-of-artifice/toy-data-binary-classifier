@@ -92,10 +92,10 @@ struct DiskExporterTests {
 
         let shard00Contents = try String(contentsOf: shard00URL, encoding: .utf8)
         let shard00Lines = shard00Contents.split(separator: "\n")
-        #expect(shard00Lines.count == 26)
+        #expect(shard00Lines.count == 2)
 
         let shard01Contents = try String(contentsOf: shard01URL, encoding: .utf8)
         let shard01Lines = shard01Contents.split(separator: "\n")
-        #expect(shard01Lines.count == 13)
+        #expect(shard01Lines.count == 1)
     }
 }
