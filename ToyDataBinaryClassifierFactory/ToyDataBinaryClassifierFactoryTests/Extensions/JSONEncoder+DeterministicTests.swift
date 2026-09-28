@@ -30,17 +30,7 @@ struct JSONEncoderDeterministicTestsTests {
         let encoder = JSONEncoder.deterministicEncoder
         let data = try encoder.encode(mock)
         let jsonString = String(decoding: data, as: UTF8.self)
-        let expectedString = """
-            {
-              "apple" : "some data here",
-              "duck" : [
-                3,
-                5,
-                1
-              ],
-              "zebra" : 42
-            }
-            """
+        let expectedString = "{\"apple\":\"some data here\",\"duck\":[3,5,1],\"zebra\":42}"
         #expect(jsonString == expectedString)
 
     }

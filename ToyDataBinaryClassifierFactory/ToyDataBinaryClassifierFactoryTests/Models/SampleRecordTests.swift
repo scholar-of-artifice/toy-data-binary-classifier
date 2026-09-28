@@ -25,21 +25,7 @@ struct SampleRecordTests {
 
         let data = try encoder.encode(record)
         let jsonString = String(decoding: data, as: UTF8.self)
-        let expectedString = """
-            {
-              "features" : [
-                0.45,
-                -2
-              ],
-              "label" : {
-                "classification" : "uniform",
-                "parameters" : {
-                  "maximum" : 1,
-                  "minimum" : -10
-                }
-              }
-            }
-            """
+        let expectedString = "{\"features\":[0.45,-2],\"label\":{\"classification\":\"uniform\",\"parameters\":{\"maximum\":1,\"minimum\":-10}}}"
 
         #expect(jsonString == expectedString)
     }

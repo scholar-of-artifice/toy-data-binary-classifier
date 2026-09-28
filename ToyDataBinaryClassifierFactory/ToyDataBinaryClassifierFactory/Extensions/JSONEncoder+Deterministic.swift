@@ -10,7 +10,7 @@ import Foundation
 extension JSONEncoder {
     static var deterministicEncoder: JSONEncoder {
         let encoder = JSONEncoder()
-        encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
+        encoder.outputFormatting = [.sortedKeys]
         return encoder
     }
 }
