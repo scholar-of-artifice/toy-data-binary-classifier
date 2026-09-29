@@ -9,6 +9,8 @@ import SwiftUI
 
 struct DistributionConfiguration: View {
 
+    @Bindable var viewModel: DistributionConfigurationViewModel
+
     var body: some View {
 
         // MARK: This section is for parameters to make for the Distribution
@@ -16,8 +18,15 @@ struct DistributionConfiguration: View {
             alignment: .leading,
             spacing: GUIConstants.SPACING
         ) {
-            // What kind of Distribution?
-            Text("Distribution Type")
+            Picker(
+                "Distribution Type",
+                selection: $viewModel.selectedDistribution
+            ) {
+                ForEach(DistributionType.allCases, id: \.self) {
+                    type in Text(type.rawValue).tag(type)
+                }
+            }
+            .focusable()
 
             // The parameters for the distribution
             Grid(
@@ -25,28 +34,59 @@ struct DistributionConfiguration: View {
                 horizontalSpacing: GUIConstants.SPACING,
                 verticalSpacing: GUIConstants.SPACING,
             ) {
-                let a = 1
-                if a == 0 {
+                if viewModel.selectedDistribution == .normal {
                     GridRow {
                         Text("Mean (µ)")
                             .font(.system(.body, design: .rounded))
                             .gridColumnAlignment(.trailing)
+                        HStack() {
+                            TextField(
+                                "",
+                                value: $viewModel.mu,
+                                format: .number
+                            )
+                            .gridColumnAlignment(.leading)
+                        }
                     }
                     GridRow {
                         Text("Standard Deviation (σ)")
                             .font(.system(.body, design: .rounded))
                             .gridColumnAlignment(.trailing)
+                        HStack() {
+                            TextField(
+                                "",
+                                value: $viewModel.sigma,
+                                format: .number
+                            )
+                            .gridColumnAlignment(.leading)
+                        }
                     }
-                } else if a == 1 {
+                } else if viewModel.selectedDistribution == .uniform  {
                     GridRow {
                         Text("Minimum")
                             .font(.system(.body, design: .rounded))
                             .gridColumnAlignment(.trailing)
+                        HStack() {
+                            TextField(
+                                "",
+                                value: $viewModel.minVal,
+                                format: .number
+                            )
+                            .gridColumnAlignment(.leading)
+                        }
                     }
                     GridRow {
                         Text("Maximum")
                             .font(.system(.body, design: .rounded))
                             .gridColumnAlignment(.trailing)
+                        HStack() {
+                            TextField(
+                                "",
+                                value: $viewModel.maxVal,
+                                format: .number
+                            )
+                            .gridColumnAlignment(.leading)
+                        }
                     }
                 } else {
                     Text("Please select a distribution")
