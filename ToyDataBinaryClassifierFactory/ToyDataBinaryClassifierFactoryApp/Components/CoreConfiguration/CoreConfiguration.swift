@@ -18,48 +18,47 @@ struct CoreConfiguration: View {
             Grid() {
                 GridRow() {
                     Text("Parameter Count")
+                        .gridColumnAlignment(.trailing)
                     HStack() {
                         TextField(
-                            "",
+                            "The number of values in each sample. Example: 30",
                             value: $viewModel.parameterCount,
                             format: .number
                         )
-                        .gridColumnAlignment(.leading)
                     }
                 }
                 GridRow() {
                     Text("Sample Size")
+                        .gridColumnAlignment(.trailing)
                     HStack() {
                         TextField(
-                            "",
+                            "The number of total samples. Example: 1000",
                             value: $viewModel.sampleSize,
                             format: .number
                         )
-                        .gridColumnAlignment(.leading)
                     }
                 }
                 GridRow() {
                     Text("Seed")
+                        .gridColumnAlignment(.trailing)
                     HStack() {
                         TextField(
-                            "",
+                            "Seed the random number generator. Example: 42",
                             value: $viewModel.seedValue,
                             format: .number
                         )
-                        .gridColumnAlignment(.leading)
                     }
                 }
                 GridRow() {
                     Text("Sort")
-                        .gridColumnAlignment(.leading)
+                        .gridColumnAlignment(.trailing)
                     HStack() {
                         Toggle(
-                            "",
+                            "Do you want the values to be sorted?",
                             isOn: $viewModel.isSorted
                         )
                         .toggleStyle(.checkbox)
                         .focusable() // explicitly tell SwiftUI that we can tab to this element
-                        .gridColumnAlignment(.leading)
                         .onKeyPress(.space) {
                             viewModel.isSorted.toggle()
                             return .handled
@@ -69,6 +68,7 @@ struct CoreConfiguration: View {
                             return .handled
                         }
                     }
+                    .gridColumnAlignment(.leading)
                 }
             }
         }
