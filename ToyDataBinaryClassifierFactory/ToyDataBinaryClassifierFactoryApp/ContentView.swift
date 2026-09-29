@@ -20,7 +20,9 @@ struct ContentView: View {
             )
             RecessedContainer(
                 title: "Distribution Configuration",
-                content: DistributionConfiguration()
+                content: DistributionConfiguration(
+                    viewModel: viewModel.distributionConfigurationVM
+                )
             )
             RecessedContainer(
                 title: "Execution Status",
