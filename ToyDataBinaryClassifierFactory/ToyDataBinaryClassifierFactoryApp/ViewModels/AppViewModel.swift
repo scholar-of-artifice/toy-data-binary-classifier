@@ -10,5 +10,5 @@ import SwiftUI
 @Observable
 class AppViewModel {
     var coreConfigurationVM = CoreConfigurationViewModel()
-    
+    var distributionConfigurationVM = DistributionConfigurationViewModel()
 }
