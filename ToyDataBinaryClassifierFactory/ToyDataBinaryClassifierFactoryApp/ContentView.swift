@@ -8,11 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Bindable var viewModel: AppViewModel
+
     var body: some View {
         VStack {
             RecessedContainer(
                 title: "Core Configuration",
-                content: CoreConfiguration()
+                content: CoreConfiguration(
+                    viewModel: viewModel.coreConfigurationVM
+                )
             )
             RecessedContainer(
                 title: "Distribution Configuration",
@@ -28,5 +32,7 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    ContentView(
+        viewModel: AppViewModel()
+    )
 }
