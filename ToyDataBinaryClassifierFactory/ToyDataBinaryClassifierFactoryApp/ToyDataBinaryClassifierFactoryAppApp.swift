@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct ToyDataBinaryClassifierFactoryAppApp: App {
+    @State private var appViewModel = AppViewModel()
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(
+                viewModel: appViewModel
+            )
         }
     }
 }
