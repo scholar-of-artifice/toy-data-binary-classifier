@@ -11,4 +11,5 @@ import SwiftUI
 class AppViewModel {
     var coreConfigurationVM = CoreConfigurationViewModel()
     var distributionConfigurationVM = DistributionConfigurationViewModel()
+    var automatorVM = AutomatorViewModel()
 }
