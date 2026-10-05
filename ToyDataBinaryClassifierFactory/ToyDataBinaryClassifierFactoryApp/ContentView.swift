@@ -8,25 +8,41 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Bindable var viewModel: AppViewModel
+
     var body: some View {
-        VStack {
-            RecessedContainer(
-                title: "Core Configuration",
-                content: CoreConfiguration()
-            )
-            RecessedContainer(
-                title: "Distribution Configuration",
-                content: DistributionConfiguration()
-            )
-            RecessedContainer(
-                title: "Execution Status",
-                content: ExecutionStatus()
-            )
+        ScrollView {
+            VStack {
+                RecessedContainer(
+                    title: "Core Configuration",
+                    content: CoreConfiguration(
+                        viewModel: viewModel.coreConfigurationVM
+                    )
+                )
+                RecessedContainer(
+                    title: "Distribution Configuration",
+                    content: DistributionConfiguration(
+                        viewModel: viewModel.distributionConfigurationVM
+                    )
+                )
+                RecessedContainer(
+                    title: "Automators",
+                    content: Automator(
+                        viewModel: viewModel.automatorVM
+                    )
+                )
+                RecessedContainer(
+                    title: "Execution Status",
+                    content: ExecutionStatus()
+                )
+            }
+            .padding()
         }
-        .padding()
     }
 }
 
 #Preview {
-    ContentView()
+    ContentView(
+        viewModel: AppViewModel()
+    )
 }
