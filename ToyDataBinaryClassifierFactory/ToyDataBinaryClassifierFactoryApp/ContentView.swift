@@ -11,25 +11,33 @@ struct ContentView: View {
     @Bindable var viewModel: AppViewModel
 
     var body: some View {
-        VStack {
-            RecessedContainer(
-                title: "Core Configuration",
-                content: CoreConfiguration(
-                    viewModel: viewModel.coreConfigurationVM
+        ScrollView {
+            VStack {
+                RecessedContainer(
+                    title: "Core Configuration",
+                    content: CoreConfiguration(
+                        viewModel: viewModel.coreConfigurationVM
+                    )
                 )
-            )
-            RecessedContainer(
-                title: "Distribution Configuration",
-                content: DistributionConfiguration(
-                    viewModel: viewModel.distributionConfigurationVM
+                RecessedContainer(
+                    title: "Distribution Configuration",
+                    content: DistributionConfiguration(
+                        viewModel: viewModel.distributionConfigurationVM
+                    )
                 )
-            )
-            RecessedContainer(
-                title: "Execution Status",
-                content: ExecutionStatus()
-            )
+                RecessedContainer(
+                    title: "Automators",
+                    content: Automator(
+                        viewModel: viewModel.automatorVM
+                    )
+                )
+                RecessedContainer(
+                    title: "Execution Status",
+                    content: ExecutionStatus()
+                )
+            }
+            .padding()
         }
-        .padding()
     }
 }
 
